@@ -14,6 +14,11 @@ The node.js implementation of the Valkey Polyglot Benchmark provides a robust pe
     ```bash
     npm install
     ```
+    For a reproducible install of exactly the versions in `package-lock.json` (CI, benchmark hosts,
+    mirrors that lag behind npmjs), use `npm ci` instead. When bumping a dependency in
+    `package.json`, regenerate the lockfile in the same change (`npm install --package-lock-only`);
+    an out-of-sync lockfile makes `npm install` re-resolve that dependency from the registry on every
+    host and makes `npm ci` fail.
 
 ## Dependencies
 
